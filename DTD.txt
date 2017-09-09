@@ -1,0 +1,58 @@
+<Bookstore>
+	<Magazine Month="Jan" Year="2011">
+	`	<Title>National Geographic</Title>
+	</Magazine>
+	<Book ISBN="ISBN-0-13-713526-2" Price="85" Edition="3rd">
+		<Title> A First COurse in Database Systems </Title>
+		<Authors>
+			<Author>
+				<First_Name>Jeffrey</First_Name>
+				<Last_Name>Ullman</Last_Name>
+			</Author>
+			<Author>
+				<First_Name>Jeninifer</First_Name>
+				<Last_Name>Widom</Last_Name>
+			</Author>
+		</Authors>
+	<Remarks>
+	</Remarks>
+	</Book>
+	<Book ISBN="ISBN-0-13-815504-6" Price="100" Edition="3rd">
+		<Title> Database Systsemts the Complete Book </Title>
+		<Authors>
+			<Author>
+				<First_Name>Mector</First_Name>
+				<Last_Name>Ullman</Last_Name>
+			</Author>
+			<Author>
+				<First_Name>Jeninifer</First_Name>
+				<Last_Name>Widom</Last_Name>
+			</Author>
+		</Authors>
+	<Remarks>
+	</Remarks>
+	</Book>
+
+
+# DTD file
+<! DOCTYPE Bookstore [
+	<! ELEMENT Bookstore (Book | Magazine)*> #* indicates 0 or more
+	<! ELEMENT Book (Title, Authors, Remarks?)> #Tagged Elements in order, ? indicates optional
+	<! ATTLIST Book ISBN CDATA #REQUIRED
+			Price CDATA #REQUIRED
+			Edition CDATA #REQUIRED # CDATA - string
+	<! ELEMENT Magazine (Title)>
+	<! ATTLIST Magazine Month CDATA #REQUIRED
+			    Year CDATA #REQUIRED
+	<! ELEMENT Title (#PCDATA)>
+	<! ELEMENT Authors (Author +)> # + indicates one or many
+	<! ELEMENT Remark (#PCDATA)>
+ 	<! ELEMENT Author (First_Name,Last_Name)>
+ 	<! ELEMENT First_Name (#PCDATA)>
+	<! ELEMENT Last_Name (#PCDATA)>
+]>
+
+RAw------XEmacs: Bookstore-DTD.xml
+
+
+
